@@ -5,7 +5,7 @@ from django.conf.urls.defaults import *
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-	(r'^$', home_page)
+	(r'^$', home_page),
     # Example:
     # (r'^bonzai/', include('bonzai.foo.urls')),
 
