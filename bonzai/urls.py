@@ -1,11 +1,12 @@
 from django.conf.urls.defaults import *
+from seo_monitor import views
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-	(r'^$', home_page),
+	(r'^$', views.home_page),
     # Example:
     # (r'^bonzai/', include('bonzai.foo.urls')),
 
