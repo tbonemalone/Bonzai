@@ -1,10 +1,11 @@
 # Create your views here.
 
 from django.http import HttpResponse
+from django.shortcuts import render_to_response
 
 def home_page(request):
 	"""View for homepage"""
-	return HttpResponse('Welcome to the Home Page')
+	return render_to_response('home_page.html', locals())
 
 def login_page(request):
 	"""View for the login page"""
@@ -23,4 +24,3 @@ def signup_page(request):
 def user_page(request, username):
 	"""View for user pages"""
 	return HttpResponse('Place holder for userpage')
-
