@@ -7,8 +7,9 @@ from seo_monitor import views
 
 urlpatterns = patterns('',
 	(r'^$', views.home_page),
-	(r'^signup/$', views.signup),
-	(r'^login/$', views.login),
+	(r'^signup/$', views.signup_page),
+	(r'^login/$', views.login_page),
+	(r'^logout/$', views.logout_page),
     # Example:
     # (r'^bonzai/', include('bonzai.foo.urls')),
 
