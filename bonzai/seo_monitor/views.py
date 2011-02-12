@@ -11,3 +11,7 @@ def signup(request):
 	return HttpResponse('This is going to be the signup page. Need field for'
 	'username, password, confirm password, email')
 
+def login(request):
+	"""View for the login page"""
+	return HttpResponse('Login page placeholder. Need field for username'
+		'password and password recovery link')
