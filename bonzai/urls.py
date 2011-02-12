@@ -10,6 +10,7 @@ urlpatterns = patterns('',
 	(r'^signup/$', views.signup_page),
 	(r'^login/$', views.login_page),
 	(r'^logout/$', views.logout_page),
+	(r'^user/(\w+)/$', user_page) # parens capture string that matches. pass to view. 
     # Example:
     # (r'^bonzai/', include('bonzai.foo.urls')),
 
@@ -18,5 +19,5 @@ urlpatterns = patterns('',
     # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    # (r'^admin/', include(admin.site.urls)),
+    (r'^admin/', include(admin.site.urls)),
 )

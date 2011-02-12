@@ -12,11 +12,15 @@ def login_page(request):
 		'password and password recovery link')
 
 def logout_page(request):
-	"""docstring for logout"""
-	pass
+	"""Place holder for logout page"""
+	return HttpResponse('Place holder for logout page')
 
 def signup_page(request):
 	"""View for the signup page"""
 	return HttpResponse('This is going to be the signup page. Need field for'
 	'username, password, confirm password, email')
+
+def user_page(request, username):
+	"""View for user pages"""
+	return HttpResponse('Place holder for userpage')
 
