@@ -2,9 +2,12 @@
 
 <html>
 	<head>
-		<title></title>
+		<title>{% block title %}Add title{% endblock %}</title>
 	</head>
 	<body>
-		
+		<h1>{% block h1_tag %}Add an H1 headline{% endblock %}</h1>
+		{% block content %}
+			Need to add content
+		{% endblock %}
 	</body>
 </html>
