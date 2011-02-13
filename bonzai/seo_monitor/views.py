@@ -1,6 +1,7 @@
 # Create your views here.
 
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib.auth import logout 
 from django.shortcuts import render_to_response
 
 def home_page(request):
@@ -8,14 +9,10 @@ def home_page(request):
 	other = request.META
 	return render_to_response('home_page.html', {'user': request.user, 'other': other})
 
-def login_page(request):
-	"""View for the login page"""
-	return HttpResponse('Login page placeholder. Need field for username'
-		'password and password recovery link')
-
 def logout_page(request):
 	"""Place holder for logout page"""
-	return HttpResponse('Place holder for logout page')
+	logout(request)
+	return HttpResponseRedirect("/")
 
 def signup_page(request):
 	"""View for the signup page"""
