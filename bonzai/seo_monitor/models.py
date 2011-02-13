@@ -5,7 +5,8 @@ from django.contrib.auth.models import User
 
 class Site(models.Model):
 	"""modelf for a site"""
-	pass
+	tld = models.URLField()
+	xml_sitemap_loc = models.URLField()
 
 class Page(models.Model):
 	"""Model for a page"""
