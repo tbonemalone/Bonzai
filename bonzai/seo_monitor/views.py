@@ -1,8 +1,10 @@
 # Create your views here.
 
 from django.http import HttpResponse, HttpResponseRedirect
+from django.template import RequestContext
 from django.contrib.auth import logout 
 from django.shortcuts import render_to_response
+from seo_monitor.forms import RegistrationForm
 
 def home_page(request):
 	"""View for homepage"""
@@ -16,8 +18,19 @@ def logout_page(request):
 
 def signup_page(request):
 	"""View for the signup page"""
-	return HttpResponse('This is going to be the signup page. Need field for'
-	'username, password, confirm password, email')
+	if request.method == 'POST':
+		form = RegistrationForm(request.POST)
+		if form.is_valid():
+			user = User.objects.create_user(
+				username=form.cleaned_data['username'],
+				password=form.cleand_data['password1'],
+				email=form.cleand_data['email']
+			)
+			return HttpResponseRedirect('/')
+	else:
+		form = RegistrationForm()
+	variables = RequestContext(request, {'form': form})
+	return render_to_response('registration/signup_page.html', variables)
 
 def user_page(request, username):
 	"""View for user pages"""
