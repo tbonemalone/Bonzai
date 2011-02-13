@@ -21,4 +21,5 @@ def signup_page(request):
 
 def user_page(request, username):
 	"""View for user pages"""
-	return HttpResponse('Place holder for userpage')
+	return render_to_response('user_page.html')
+	
