@@ -5,6 +5,7 @@ from django.template import RequestContext
 from django.contrib.auth import logout 
 from django.shortcuts import render_to_response
 from seo_monitor.forms import RegistrationForm
+from django.contrib.auth.models import User
 
 def home_page(request):
 	"""View for homepage"""
@@ -23,8 +24,8 @@ def signup_page(request):
 		if form.is_valid():
 			user = User.objects.create_user(
 				username=form.cleaned_data['username'],
-				password=form.cleand_data['password1'],
-				email=form.cleand_data['email']
+				password=form.cleaned_data['password1'],
+				email=form.cleaned_data['email']
 			)
 			return HttpResponseRedirect('/')
 	else:

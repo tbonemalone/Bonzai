@@ -13,7 +13,7 @@ class RegistrationForm(forms.Form):
 	
 	def clean_password2(self):
 		"""Checks to be sure same password entered twice during reg"""
-		if 'password1' in self.cleanded_data: # would also like to try if self.is_valid()
+		if 'password1' in self.cleaned_data: # would also like to try if self.is_valid()
 			password1 = self.cleaned_data['password1']
 			password2 = self.cleaned_data['password2']
 			if password1 == password2:
@@ -22,7 +22,7 @@ class RegistrationForm(forms.Form):
 	
 	def clean_username(self):
 		"""Checks that username doesn't contain invalid chars"""
-		username = self.cleand_data['username']
+		username = self.cleaned_data['username']
 		if not re.search(r'^\w+$', username):
 			raise forms.ValidationError ('Username can only contain '
 			'alphanumeric characters and the underscore.')
