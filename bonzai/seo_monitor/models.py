@@ -11,9 +11,9 @@ class Site(models.Model):
 class Page(models.Model):
 	"""Model for a page"""
 	url = models.URLField()
-	keyword = models.CharField()
-	title_tag = models.CharField()
-	h1_tag = models.CharField()
+	keyword = models.CharField(max_length=100)
+	title_tag = models.CharField(max_length=100)
+	h1_tag = models.CharField(max_length=50)
 	last_date_audited = models.DateTimeField()
 	site = models.ForeignKey(Site)
 	
