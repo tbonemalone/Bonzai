@@ -10,7 +10,7 @@ from seo_monitor import views
 urlpatterns = patterns('',
 	(r'^$', views.home_page),
 	(r'^signup/$', views.signup_page),
-	(r'^login/$', views.login_page),
+	(r'^login/$', 'django.contrib.auth.views.login'),
 	(r'^logout/$', views.logout_page),
 	(r'^user/(\w+)/$', views.user_page), # parens capture string that matches. pass to view. 
     # Example:
