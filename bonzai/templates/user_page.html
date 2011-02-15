@@ -1,11 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
-	{% if user.username %}
-		Welcome {{ user.username }}
-	{% else %}
-		No username
-	{% endif %}
+	{{ username }}
 {% endblock %}
 
 {% block h1_tag %}Need an H1 tag{% endblock %}
