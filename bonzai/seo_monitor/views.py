@@ -35,5 +35,8 @@ def signup_page(request):
 
 def user_page(request, username):
 	"""View for user pages"""
-	return render_to_response('user_page.html')
+	user = User.objects.get(username=username)
+	username = user.username
+	email = user.email
+	return render_to_response('user_page.html', {'username': username, 'email': email })
 	
