@@ -6,7 +6,7 @@
 
 {% block content %}
 	{% if user.username %}
-		<p>Welcome {{ user.username }}</p>
+		<p>Welcome {{ user.username }}! <a href="logout/">logout</a></p>
 	{% else %}
 		<p>Welcome but I don't know you. Please <a href="login/">login</a> or <a href="signup/">signup.</a></p>
 	{% endif %}
